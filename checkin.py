@@ -20,8 +20,8 @@ password = ""
 
 
 def main():
-    username = sys.argv[0]
-    password = sys.argv[1]
+    username = sys.argv[1]
+    password = sys.argv[2]
     print(inspect.currentframe().f_lineno, username, password, "\n")
     login(username, password)
     rand = str(round(time.time()*1000))
