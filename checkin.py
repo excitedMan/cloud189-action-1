@@ -6,6 +6,7 @@ import rsa
 import json
 import base64
 import inspect
+import sys
 from urllib import parse
 
 s = requests.Session()
@@ -13,12 +14,14 @@ s = requests.Session()
 username = ""
 password = ""
 
-if(username == "" or password == ""):
-    username = input("账号：")
-    password = input("密码：")
+# if(username == "" or password == ""):
+#     username = input("账号：")
+#     password = input("密码：")
 
 
 def main():
+    username = sys.argv[0]
+    password = sys.argv[1]
     print(inspect.currentframe().f_lineno, username, password, "\n")
     login(username, password)
     rand = str(round(time.time()*1000))
